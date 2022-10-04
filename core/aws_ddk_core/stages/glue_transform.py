@@ -96,7 +96,6 @@ class GlueTransformStage(StateMachineStage):
             self._job = GlueFactory.job(
                 self,
                 id=f"{id}-job",
-                name=f"{id}-crawler",
                 environment_id=environment_id,
                 executable=executable,
                 role=job_role,
@@ -109,6 +108,7 @@ class GlueTransformStage(StateMachineStage):
             self._crawler = CfnCrawler(
                 self,
                 f"{id}-crawler",
+                name=f"{id}-crawler",
                 database_name=database_name,
                 targets=targets,
                 role=crawler_role.role_arn,  # type: ignore
