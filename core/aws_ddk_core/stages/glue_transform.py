@@ -96,6 +96,7 @@ class GlueTransformStage(StateMachineStage):
             self._job = GlueFactory.job(
                 self,
                 id=f"{id}-job",
+                name=f"{id}-crawler",
                 environment_id=environment_id,
                 executable=executable,
                 role=job_role,
